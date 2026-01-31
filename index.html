@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dodi - The AI Companion You Can Hug</title>
+    
+    <link rel="icon" type="image/png" href="img/dodi_head.ico">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Nunito', sans-serif; }
-        .gradient-bg { background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%); }
+        
+        /* Animations */
+        .logo-bounce:hover { animation: bounce 1s infinite; }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
         .blob { position: absolute; filter: blur(40px); z-index: -1; opacity: 0.5; }
+        
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
     </style>
 </head>
 <body class="text-gray-700 overflow-x-hidden">
 
-    <nav class="flex justify-between items-center py-6 px-8 max-w-6xl mx-auto">
-        <div class="text-2xl font-extrabold text-blue-500 tracking-tighter">Dodi</div>
-        <a href="#waitlist" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full font-bold transition shadow-lg text-sm">
+    <nav class="flex justify-between items-center py-6 px-8 max-w-6xl mx-auto bg-white/80 backdrop-blur-sm sticky top-0 z-50 rounded-b-2xl">
+        <div class="flex items-center gap-3 group cursor-pointer">
+            <img src="img/dodi_head_400x400.png" alt="Dodi Face" class="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-blue-200 logo-bounce shadow-sm bg-white">
+            <div class="text-2xl font-extrabold text-blue-500 tracking-tighter group-hover:text-blue-600 transition">Dodi</div>
+        </div>
+        
+        <a href="#waitlist" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full font-bold transition shadow-lg text-sm transform hover:scale-105">
             Early Access
         </a>
     </nav>
 
     <header class="max-w-6xl mx-auto px-6 py-12 md:py-20 flex flex-col-reverse md:flex-row items-center gap-12">
-        <div class="md:w-1/2 space-y-6">
+        <div class="md:w-1/2 space-y-6 z-10">
             <div class="inline-block bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">
                 Coming Soon 2026
             </div>
@@ -34,7 +51,7 @@
                 Screen-free, privacy-focused, and full of heart.
             </p>
             
-            <form action="YOUR_FORMSPREE_URL" method="POST" id="waitlist" class="bg-white p-2 rounded-2xl shadow-xl border border-gray-100 flex flex-col sm:flex-row gap-2 max-w-md">
+            <form action="YOUR_FORMSPREE_URL_HERE" method="POST" id="waitlist" class="bg-white p-2 rounded-2xl shadow-xl border border-gray-100 flex flex-col sm:flex-row gap-2 max-w-md transition hover:shadow-2xl">
                 <input type="email" name="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-200" required>
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-bold transition shadow-md whitespace-nowrap">
                     Join Waitlist
@@ -46,37 +63,68 @@
         <div class="md:w-1/2 relative">
             <div class="blob bg-blue-300 w-72 h-72 rounded-full top-0 right-0 mix-blend-multiply animate-pulse"></div>
             <div class="blob bg-purple-300 w-72 h-72 rounded-full bottom-0 left-10 mix-blend-multiply"></div>
-            <img src="placeholder-dodi.png" alt="Dodi Robot Plush" class="relative z-10 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition duration-500 border-4 border-white">
+            
+            <img src="img/dodi_product_shot.png" alt="Dodi Robot Plush Product Shot" class="relative z-10 rounded-3xl shadow-2xl transform rotate-2 hover:rotate-0 transition duration-700 border-4 border-white object-cover w-full">
+            
+            <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg z-20 hidden md:block animate-bounce">
+                <p class="font-bold text-blue-500 text-sm">❤️ Soft Touch</p>
+            </div>
         </div>
     </header>
 
-    <section class="bg-white py-20">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-center text-3xl font-bold mb-16 text-gray-800">Why kids (and parents) love Dodi</h2>
+    <section class="bg-gradient-to-b from-white to-blue-50 py-20 relative overflow-hidden">
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col md:flex-row gap-12 items-center">
             
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-8 rounded-3xl bg-blue-50 border border-blue-100 hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🧸</div>
-                    <h3 class="text-xl font-bold mb-3">Soft & Huggable</h3>
-                    <p class="text-gray-600 text-sm">No hard plastic shell. Dodi is a real plush toy with a safe, ventilated core designed for cuddles.</p>
+            <div class="md:w-1/3 flex justify-center">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-200 rounded-full filter blur-3xl opacity-30"></div>
+                    <img src="img/dodi.png" alt="Dodi Full Character" class="relative z-10 w-64 md:w-full drop-shadow-2xl transform hover:scale-105 transition duration-500">
                 </div>
-                <div class="p-8 rounded-3xl bg-purple-50 border border-purple-100 hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🧠</div>
-                    <h3 class="text-xl font-bold mb-3">Smart Companion</h3>
-                    <p class="text-gray-600 text-sm">Dodi answers curious questions, tells improvised bedtime stories, and helps with math homework.</p>
-                </div>
-                <div class="p-8 rounded-3xl bg-green-50 border border-green-100 hover:shadow-lg transition">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-bold mb-3">Privacy First</h3>
-                    <p class="text-gray-600 text-sm">Parents are in control. No hidden recording. Dodi only listens when you say the magic wake word.</p>
+            </div>
+
+            <div class="md:w-2/3">
+                <h2 class="text-3xl font-bold mb-10 text-gray-800">Why kids (and parents) love Dodi</h2>
+                
+                <div class="grid gap-6">
+                    <div class="p-6 rounded-2xl bg-white border border-blue-100 shadow-sm hover:shadow-md transition flex items-start gap-4">
+                        <div class="text-3xl bg-blue-50 p-3 rounded-xl">🧸</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Soft & Huggable</h3>
+                            <p class="text-gray-600 text-sm">No hard plastic shell. Dodi is a real plush toy with a safe, ventilated core designed for cuddles.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-purple-100 shadow-sm hover:shadow-md transition flex items-start gap-4">
+                        <div class="text-3xl bg-purple-50 p-3 rounded-xl">🧠</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Smart Companion</h3>
+                            <p class="text-gray-600 text-sm">Dodi answers curious questions, tells improvised bedtime stories, and helps with math homework.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-green-100 shadow-sm hover:shadow-md transition flex items-start gap-4">
+                        <div class="text-3xl bg-green-50 p-3 rounded-xl">🛡️</div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-1">Privacy First</h3>
+                            <p class="text-gray-600 text-sm">Parents are in control. No hidden recording. Dodi only listens when you say the magic wake word.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-50 border-t border-gray-200 py-12 text-center">
-        <p class="text-gray-500 font-bold mb-4">Dodi Robotics</p>
-        <p class="text-gray-400 text-sm">&copy; 2026 Dodi Robotics. Made with ❤️ in Austria.</p>
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <img src="img/dodi_head_400x400.png" alt="Dodi Logo" class="w-8 h-8 rounded-full border border-gray-200 grayscale opacity-70">
+                <p class="font-bold text-gray-600">Dodi Robotics</p>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2026 Dodi Robotics. Made with ❤️ in Austria.</p>
+            <div class="mt-4 space-x-4 text-xs text-gray-400">
+                <a href="#" class="hover:text-gray-600">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-600">Contact</a>
+            </div>
+        </div>
     </footer>
 
 </body>
